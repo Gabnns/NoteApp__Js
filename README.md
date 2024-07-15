@@ -43,4 +43,4 @@ Este projeto é um aplicativo de notas construído utilizando HTML, CSS e JavaSc
 As notas adicionadas pelos usuários são armazenadas no armazenamento local do navegador (localStorage). Isso garante que as notas não sejam perdidas ao atualizar a página ou fechar a aba do navegador. <br/>
 </p>
 
-- [Visite o projeto online]()!
+- [Visite o projeto online](https://appnote-js.netlify.app/)!
