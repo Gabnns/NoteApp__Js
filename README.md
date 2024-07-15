@@ -4,12 +4,12 @@
 <p align="center">
 Este projeto é um aplicativo de notas construído utilizando HTML, CSS e JavaScript. O aplicativo permite que os usuários adicionem, editem e excluam suas notas de forma simples e intuitiva.
 
-# Funcionalidades
+## Funcionalidades
 - Adicionar Notas: Permite que os usuários criem novas notas.
 - Editar Notas: Permite que os usuários modifiquem notas existentes.
 - Excluir Notas: Permite que os usuários removam notas indesejadas.
 
-# Persistência de Dados
+## Persistência de Dados
 As notas adicionadas pelos usuários são armazenadas no armazenamento local do navegador (localStorage). Isso garante que as notas não sejam perdidas ao atualizar a página ou fechar a aba do navegador. <br/>
 </p>
 
