@@ -1,0 +1,353 @@
+/* ================= GOOGLE FONTS ================= */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playwrite+PE:wght@100..400&display=swap');
+
+/* ================= VARIABLES CSS ================= */
+:root {
+
+    /* ======== COLORS ======== */
+    --title-color: #8300F5;
+    --text-color: #886ba3;
+    --body-color: #D9BFF5;
+    --container-color: #F5F5AE;
+
+
+    /* ======== Font and Typography ======== */
+    --title-font: "Nunito", sans-serif;
+    --body-font: "Playwrite PE", sans-serif;
+
+    /* .5rem = 8px | 1rem = 16px ... */
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+    --tiny-font-size: 0.625rem;
+
+    /* ======== Font weight ======== */
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /* ======== Margens bottom ======== */
+    --mb-0-25: 0.25rem;
+    --mb-0-5: 0.5rem;
+    --mb-0-75: 0.75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+}
+
+/* ================= Responsive typography ================= */
+@media screen and (max-width: 992px) {
+    :root {
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1rem;
+        --normal-font-size: 0.938rem;
+        --small-font-size: 0.813rem;
+        --smaller-font-size: 0.75rem;
+    }
+}
+
+/* ================= BASE ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+button,
+input {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--title-font);
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+
+p {
+    font-size: var(--small-font-size);
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+span {
+    font-size: var(--tiny-font-size);
+}
+
+/* ================= REUSABLES CSS CLASSES ================= */
+.wrapper {
+    margin: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 265px);
+    gap: 15px;
+}
+
+.wrapper__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper__button-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.wrapper__button-icon i {
+    font-size: 2.5rem;
+    width: 68px;
+    height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: var(--text-color) dashed 1px;
+}
+
+.wrapper__button-icon i:hover {
+    background-color: var(--title-color);
+    color: var(--body-color);
+    cursor: pointer;
+    transition: .3s;
+    border: none;
+}
+
+.note__item {
+    position: relative;
+    height: 250px;
+    border-radius: 5px;
+    background-color: var(--container-color);
+    padding: 15px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.wrapper__button-add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.note__content-item h2 {
+    position: relative;
+    font-size: var(--h2-font-size);
+}
+
+.note__content-item h2::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    left: 1px;
+    bottom: -5px;
+    position: absolute;
+    border-bottom: 1px solid rgba(128, 0, 128, 0.149);
+}
+
+.note__content-item p {
+    height: 150px;
+    overflow-y: auto;
+    margin-bottom: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.note__content-item p::-webkit-scrollbar {
+    background: var(--body-color);
+    border-radius: 50px;
+    width: 10px;
+}
+
+.note__content-item p::-webkit-scrollbar-thumb {
+    background: #a303e2;
+    border-radius: 50px;
+}
+
+
+.note__content-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.note__bottom-settings>i {
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.bottom__settings-menu {
+    position: absolute;
+    bottom: 30px;
+    right: 17px;
+    border-radius: 4px;
+    background-color: var(--body-color);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform 0.2s ease;
+}
+
+/* active menu - settings */
+.note__bottom-settings.show .bottom__settings-menu {
+    transform: scale(1);
+}
+
+.bottom__settings-menu li {
+    padding: 5px 10px;
+    height: 25px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 0;
+    font-size: 12px;
+}
+
+.bottom__settings-menu i {
+    font-size: 15px;
+}
+
+.bottom__settings-menu li:hover {
+    background-color: #F5F5AE;
+    cursor: pointer;
+}
+
+
+
+
+.popup__box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+}
+
+.popup__box .popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 400px;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.popup .popup__content {
+    border-radius: 5px;
+    background-color: var(--container-color);
+}
+
+.popup__content header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 15px 25px;
+}
+
+.popup__header p {
+    font-size: 20px;
+    font-weight: var(--font-semi-bold);
+}
+
+.popup__header i {
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.popup__form {
+    margin: 20px 25px 35px;
+}
+
+.popup__form .row {
+    margin-bottom: 20px;
+}
+
+.popup__form .row label {
+    display: block;
+    font-size: var(--small-font-size);
+    margin-bottom: 6px;
+}
+
+.popup__form :where(input, textarea) {
+    width: 100%;
+    height: 50px;
+    font-size: 17px;
+    padding: 5px 10px;
+    border: 1px solid var(--title-color);
+    border-radius: 4px;
+    outline: none;
+}
+
+.popup__form textarea {
+    height: 150px !important;
+    resize: none;
+    font-family: var(--body-font);
+}
+
+.popup__form button {
+    width: 100%;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    background-color: var(--body-color);
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+
+.popup__form button:hover {
+    background-color: var(--title-color);
+    color: var(--body-color);
+    transition: all ease .2s;
+}
+
+
+/* Visible/No visible Popup */
+.popup__box {
+    opacity: 0;
+    pointer-events: none;
+    transition: all ease-in-out .2s;
+}
+
+.show {
+    opacity: 1;
+    pointer-events: auto;
+}
