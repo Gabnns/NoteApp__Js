@@ -15,7 +15,7 @@ Este projeto é um aplicativo de notas construído utilizando HTML, CSS e JavaSc
 </p>
 
 <p align="center">
-  <img src="assets/images/AppNote_Js.PNG" alt="App Note image" width="300"/>
+  <img src="assets/images/AppNote_Js.PNG" alt="App Note image" />
 </p>
 
 <br>
