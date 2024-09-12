@@ -1,5 +1,5 @@
 
-<h1 align="center"> Note APP || Project in JS </h1>
+<h1 align="center"> Note APP || JavaScript  </h1>
 
 <p align="center">
 Este projeto é um aplicativo de notas construído utilizando HTML, CSS e JavaScript. O aplicativo permite que os usuários adicionem, editem e excluam suas notas de forma simples e intuitiva.
